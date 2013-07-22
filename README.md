@@ -20,7 +20,7 @@ node default {
   }
 }
 ```
-Le paramètre **server** permet de spécifier le serveur qui doit centraliser vos logs. Si le nom spécifié est le fqdn de la machine sur lesquel ce module est appliqué, alors cette machine centralise les logs et la configuration est modifié en conséquence.
+Le paramètre **server** permet de spécifier le serveur qui doit centraliser vos logs. Si le nom spécifié est le fqdn de la machine sur lesquel ce module est appliqué, alors cette machine centralise les logs et la configuration est modifiée en conséquence.
 
 ## A faire
 
