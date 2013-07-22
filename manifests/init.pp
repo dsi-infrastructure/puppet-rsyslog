@@ -1,6 +1,12 @@
 # Class rsyslog
 #
-class rsyslog($server = undef, $centralized='disable') {
+class rsyslog($server = undef) {
+
+  if $fqdn == $server {
+    $centralized = 'enable'
+  } else {
+    $centralized = 'disable'
+  }
 
   package { 'rsyslog':
     ensure => installed,
