@@ -1,27 +1,11 @@
-# Rsyslog [![Build Status](https://travis-ci.org/sipf-infrastructure/rsyslog.png?branch=master)](https://travis-ci.org/sipf-infrastructure/rsyslog)
+## Utilisation du module
 
-## Installation du module
+* Ce module utilise les "hiera", veuillez créer un répertoire "rsyslog" dans le dossier hieradata.
+* Dans ce nouveau répertoire veuillez créer un fichier portant le nom suivant : srv1.dev.yaml
+* Ce fichier doit contenir ce qui suit :
 
-Dans le répertoire '/etc/puppet/modules', lancez les commandes suivantes :
-```bash
-$ mkdir rsyslog
-$ cd rsyslog
-$ git clone https://github.com/sipf-infrastructure/rsyslog.git .
+```
+---
+rsyslog::logserver : 'FQDN'
 ```
 
-## Utilisation
-
-Dans le fichier '/etc/puppet/manifests/site.pp', on définit ce qui suit :
-```ruby
-node default {
-  # Pour les serveurs devant centraliser leurs logs
-  class { 'rsyslog':
-    server => 'log.server.example.com',
-  }
-}
-```
-Le paramètre **server** permet de spécifier le serveur qui doit centraliser vos logs. Si le nom spécifié est le fqdn de la machine sur lesquel ce module est appliqué, alors cette machine centralise les logs et la configuration est modifiée en conséquence.
-
-## A faire
-
-- Ajouter le support REPL/SSL/TLS
