@@ -1,6 +1,6 @@
 # Class rsyslog
 #
-class rsyslog($server = undef) {
+class rsyslog($server = hiera(rsyslog::logserver )) {
 
   if $fqdn == $server {
     $centralized = 'enable'
